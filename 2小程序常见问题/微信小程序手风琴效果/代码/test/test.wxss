@@ -1,0 +1,22 @@
+
+.item{
+    width:100vw;
+    height: 60rpx;
+    color:red;
+    font-size: 30rpx;
+    background-color: pink;
+    margin-bottom:10rpx;
+}
+
+.option{
+    width:90vw;
+    height: 40rpx;
+    background: #ccc;
+}
+.item-title{
+    width:50vw;
+    height: 40rpx;
+    background-color: orange;
+    color:#fff;
+    font-weight: 600;
+}

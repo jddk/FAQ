@@ -1,0 +1,16 @@
+
+<view class='items'>
+    <block wx:for="{{items}}" wx:key="list1">
+        <view class='item-wrap'>
+            <view class="title">{{item.title}}</view>
+
+            <block wx:for="{{item.list}}" wx:for-item="itemtwo" wx:for-index="indextwo" wx:key="list2">
+                <view bindtap="itemTap" data-indextwo="{{indextwo}}" data-index="{{index}}" class='item'>{{itemtwo.name}}</view>
+                <!-- select -->
+                <view hidden='{{hiddenArry[index][indextwo]}}' class='select'>
+                    <view wx:for="{{item.list}}"  wx:key="list3" class='option'>{{item.name}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+</view>

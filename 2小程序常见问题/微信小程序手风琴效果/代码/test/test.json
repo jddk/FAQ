@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "测试页面",
+    "usingComponents": {
+        "myEcharts": "../../compontes/myEcharts/myEcharts"
+    }
+}
