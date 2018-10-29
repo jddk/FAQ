@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度地图坐标系转换-demo</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e4TOrsUdUfMPG7Or4Dde9UVS4pyj29jB"></script>
+    <style>
+    #allmap {
+        width: 500px;
+        height: 500px;
+        background: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <script type="text/javascript">
+    $(function() {
+    	//经度longitude
+    	//纬度latitude
+
+    	//gps坐标   115.778676,33.844582
+    	//百度坐标  115.79065985735,33.849383077871
+
+
+
+    var x = 115.778676;
+    var y = 33.844582;
+    //GPS坐标转换百度坐标
+    var ggPoint = new BMap.Point(x, y);
+    //坐标转换完之后的回调函数
+    translateCallback = function(data) {
+    if (data.status === 0) {
+        var marker = new BMap.Marker(data.points[0]);
+        var label = new BMap.Label({ offset: new BMap.Size(20, -10) });
+        marker.setLabel(label); //添加百度label
+        //转换完后的百度坐标
+        console.log(data.points[0].lng);
+        console.log(data.points[0].lat);
+    }
+    }
+
+    setTimeout(function(){
+    	var convertor = new BMap.Convertor();
+    	var pointArr = [];
+    	pointArr.push(ggPoint);
+    	convertor.translate(pointArr, 1, 5, translateCallback);
+    },1000)
+
+
+
+
+
+    //获取当前位置
+    //     var point = new BMap.Point(116.331398,39.897445);
+    //     var geoc = new BMap.Geocoder(); 
+    //     var geolocation = new BMap.Geolocation();
+
+    //     geolocation.getCurrentPosition(function(r){
+    //     if(this.getStatus() == BMAP_STATUS_SUCCESS){
+    //         var mk = new BMap.Marker(r.point);
+    //         var pt = r.point; //获取到经纬度
+
+    //         console.log(pt)
+
+    //         geoc.getLocation(pt, function(rs){
+    //         var addComp = rs.addressComponents;
+    //         $('p').html(addComp.city+addComp.district+addComp.street+addComp.streetNumber);
+    //     });   
+    //     }
+    //     else {
+    //         alert('failed'+this.getStatus());
+    //     }        
+    // },{enableHighAccuracy: true});
+
+
+    })
+    </script>
+</body>
+
+</html>

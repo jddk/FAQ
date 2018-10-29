@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <link rel="stylesheet" href="css/bdtest.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e4TOrsUdUfMPG7Or4Dde9UVS4pyj29jB"></script>
+    <!-- <script src="js/bdtest.js"></script> -->
+</head>
+<body>
+    <a href="bd1.html">bd1</a>
+    <a href="bd2.html">bd2</a>
+    <a href="bd3.html">bd3</a>
+    <a href="bd4.html">bd4</a>
+
+    <p class="weidu">333</p>
+	<!-- <p class="jindu"></p> -->
+
+    <script>
+    	$(function(){
+    		setTimeout('xx',2000)
+    		
+    		var xx=function(){
+    			$('.weidu').load('bd1.html .weidu')
+    		}
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/*图片上传容器*/
+.upload{
+	font-size: 0;
+}
+.upload-item{
+	display: inline-block;
+	vertical-align: top;
+	width: 23%;
+	height: 73px;
+	margin-right: 2.5%;
+	margin-bottom: 10px;
+	position: relative;
+}
+.upload .upload-item:nth-child(4n + 4){
+	margin-right: 0;
+}
+.upload-item img{
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+.upload-item .mui-badge{display: block;position: absolute;top: -6px;right: -3px;}

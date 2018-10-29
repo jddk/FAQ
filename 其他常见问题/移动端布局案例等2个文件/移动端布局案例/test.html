@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no" >
+	<!-- <meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi"> 知乎方法 -->
+	<!-- device-width 设备的实际宽度，不设置时默认为这个值 -->
+	<!-- height=device-height -->
+	<title>桌面测试代码</title>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="base.css">
+	<script>
+		(function(){
+
+			var html = document.documentElement;
+			var width = html.getBoundingClientRect().width;
+
+			html.style.fontSize = width/18 + 'px';
+			// 1080/18=60 1rem=60px
+		})();
+	</script>
+</head>
+<body>
+	<header id="header" class="clearfix">
+		<a href="#" class="left">北京市海淀区<span></span></a>
+	    <input type="text" class="left" value="输入店铺、商品等" />
+	    <a href="#" class="right"><span>我的</span></a>
+	</header>
+
+
+</body>
+</html>

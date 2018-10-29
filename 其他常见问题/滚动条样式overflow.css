@@ -1,0 +1,31 @@
+/* 滚动条整体部分 */
+::-webkit-scrollbar{
+    /* background-color: red; */
+    width: 3px;
+    box-sizing: border-box;
+}
+/* 滚动条两端的按钮 */
+/* ::-webkit-scrollbar-button{
+    background-color: purple;
+}  */
+/* 外层轨道 */
+/* ::-webkit-scrollbar-track{
+    background-color: orange;
+} */
+/* 内层轨道，滚动条中间部分（除去） */
+::-webkit-scrollbar-track-piece{
+    /* background-color: pink; */
+    background-color: #fff;
+}
+/* 滚动条里面可以拖动的那个 */
+::-webkit-scrollbar-thumb{
+    background-color: #ffb9b9;
+}
+/* 边角 */
+/* ::-webkit-scrollbar-corner{
+    background-color: blue;
+} */
+/* 定义右下角拖动块的样式 */
+/* ::-webkit-resizer{
+    background-color: green;
+} */

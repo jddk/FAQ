@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <script src="https://code.jquery.com/jquery.js"></script>
+	<style>
+ #box{  
+            width:100px;
+            height:160px;
+            position:relative;
+            perspective:500;
+            -webkit-perspective:500;
+        }
+        #box div{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:pink;
+            -webkit-perspective:10000;
+            backface-visibility:hidden;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+        }
+        #box .front{
+        }
+        #box .back{
+            -webkit-transform:rotateY(-180deg);
+        }
+    /*    #box:hover .front{
+            -webkit-transform:rotateY(-180deg);
+        }*/
+        /*#box:hover .back{
+            -webkit-transform:rotateY(-360deg);
+        } */       
+	</style>
+</head>
+<body>
+<div id="box">
+    <div class="front">
+    	<br>
+        <br>
+         <p>智慧卡x1</p>
+         <p class="p2">点击抽取</p>
+    </div>
+    <div class="back">
+    	<br>
+        <br>
+         <p>恭喜您获得智慧购物卡 x1</p>
+    </div>
+</div>
+<script>
+	$(".front").click(function(){
+		$(".front").css("-webkit-transform","rotateY(-180deg)");
+        $(".back").css("-webkit-transform","rotateY(-360deg)")
+	})
+	// $(".back").click(function(){
+	// 	$(".back").css("-webkit-transform","rotateY(-180deg)");
+ //        $(".front").css("-webkit-transform","rotateY(-360deg)");
+	// })
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试页面</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            /*background: pink;*/
+            margin:100px;
+        }
+        .main{
+            width: 35px;
+            height: 35px;
+            background-image: url(check.png);
+            background-position:50% 0%;
+            background-repeat: no-repeat;
+
+        }
+
+        input{
+            width: 35px;
+            height: 35px;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="main">
+            <input type="checkbox">
+        </div>  
+    </div>
+    
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $('.main').click(function(){
+            if($(this).css('background-position') === '50% 0%'){
+                $(this).css('background-position','50% 100%')
+            }else{
+                $(this).css('background-position','50% 0%')
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

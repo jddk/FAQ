@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css3滤镜</title>
+  <style>
+   /*高斯模糊*/ img {  
+    -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(3px);
+}
+   /*图片变亮*/ img {
+    -webkit-filter: brightness(200%); /* Chrome, Safari, Opera */
+    filter: brightness(200%);
+}
+     /*图片对比度*/img {
+    -webkit-filter: contrast(200%); /* Chrome, Safari, Opera */
+    filter: contrast(200%);
+}
+     /*给图片加阴影效果*/img {
+    -webkit-filter: drop-shadow(8px 8px 10px red); /* Chrome, Safari, Opera */
+    filter: drop-shadow(8px 8px 10px red);
+} 
+   /*将图片转换为灰色图片*/img {
+    -webkit-filter: grayscale(50%); /* Chrome, Safari, Opera */
+    filter: grayscale(50%);
+}
+     /*给图像应用色相旋转*/img {
+    -webkit-filter: hue-rotate(90deg); /* Chrome, Safari, Opera */
+    filter: hue-rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <p>图片使用高斯模糊效果:</p>
+
+<img src="pineapple.jpg" alt="Pineapple" width="300" height="300">
+
+<p><strong>注意：</strong> Internet Explorer 不支持 filter 属性。</p>
+
+</body>
+</html>

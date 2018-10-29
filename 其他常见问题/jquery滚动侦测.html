@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+.item{
+    height: 800px;
+    background: pink;
+    margin-bottom: 20px;
+   
+}
+
+.fixed-left{
+    width: 200px;
+    position: fixed;
+    right: 50%;
+    margin-right:200px;
+}
+</style>  
+
+
+
+
+<div class="container">
+<div class="col">
+<div class="col-xs-12 col-sm-3">
+<div id="menu" class="list-group fixed-left">
+<a href="#section1" class="list-group-item active">1<span class="glyphicon glyphicon-chevron-right"></span></a>
+<a href="#section2" class="list-group-item ">2<span class="glyphicon glyphicon-chevron-right"></span></a>
+<a href="#section3" class="list-group-item ">3<span class="glyphicon glyphicon-chevron-right"></span></a>
+<a href="#section4" class="list-group-item ">4<span class="glyphicon glyphicon-chevron-right"></span></a>
+<a href="#section5" class="list-group-item ">5<span class="glyphicon glyphicon-chevron-right"></span></a>
+<a href="#section6" class="list-group-item ">6<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>  <!-- list-group -->
+</div>  <!-- col-xs-12 col-sm-3 -->
+
+<div id="content" class="col-xs-12 col-sm-9">
+<div id="section1" class="item">section1</div>
+<div id="section2" class="item">section2</div>
+<div id="section3" class="item">section3</div>
+<div id="section4" class="item">section4</div>
+<div id="section5" class="item">section5</div>
+<div id="section6" class="item">section6</div>
+
+</div> <!-- col-xs-12 col-sm-9 -->
+</div> <!-- col -->
+</div>  <!-- container -->
+
+<script>
+ $(document).ready(function () {
+            $(window).scroll(function () {
+                var items = $("#content").find(".item");
+                var menu = $("#menu");
+                var top = $(document).scrollTop();
+                var currentId = ""; //滚动条现在所在位置的item id
+                items.each(function () {
+                    var m = $(this);
+                    //注意：m.offset().top代表每一个item的顶部位置
+                    if (top > m.offset().top - 300) {
+                        currentId = "#" + m.attr("id");
+                        console.log(m.offset().top)
+                    } else {
+                        return false;
+                    }
+                });
+
+                var currentLink = menu.find(".active");
+                if (currentId && currentLink.attr("href") != currentId) {
+                    currentLink.removeClass("active");
+                    menu.find("[href=" + currentId + "]").addClass("active");
+                }
+            });
+        });
+</script>
+</body>
+</html>

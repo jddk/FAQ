@@ -1,0 +1,4 @@
+<meta name="viewport" content="width=750,user-scalable=0,target-densitydpi=device-dpi">
+
+
+注：width=750为设计稿上的尺寸

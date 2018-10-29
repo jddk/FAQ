@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度地图坐标系转换-demo</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e4TOrsUdUfMPG7Or4Dde9UVS4pyj29jB"></script>
+    <style>
+    #allmap {
+        width: 500px;
+        height: 500px;
+        background: pink;
+    }
+
+    p {
+        font-size: 80px;
+    }
+    </style>
+</head>
+    
+<body>
+    <p>3</p>
+    <script type="text/javascript">
+    $(function() {
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r) {
+            if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                //alert('您的位置：' + r.point.lng + ',' + r.point.lat);
+               //alert(r.point)
+               //console.log(r.point);
+               $('p').html(r.point)
+
+
+            } else {
+                alert('failed' + this.getStatus());
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Mobile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+		(function(){
+			var html = document.documentElement;
+			var width = html.getBoundingClientRect().width;
+			html.style.fontSize = width/20 + 'px';
+			// 750/16=46.875 1rem=46.875px
+			//750/75=10 1rem=10px
+			//750/20=37.5 1rem=37.5px
+		})();
+	</script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		section{
+			width: 20.0rem;
+			height: 13.333333rem;
+			position: absolute;
+		}
+		.a1{
+			background: pink;
+		}
+		.a2{
+			background: orange;
+		}
+		.a3{
+			background: green;
+		}
+		
+	</style>
+</head>
+<body>
+		<div class="wrap">
+			<section class="a1" >1</section>
+			<section class="a2">2</section>
+			<section class="a3">3</section>
+		</div>
+<script>
+
+
+// 		$(document).on("pagecreate","#pageone",function(){
+//   $("p").on("swipeleft",function(){
+//     $(this).hide();
+//   });                       
+// });
+$(function(){
+	// $('.wrap section').swipeleft(function(){
+	// 	$(this).hide().silbings().show();
+	// })
+var index	= 2;
+	     
+	     //像右滑动切换图片
+    $('.wrap section').swiperight(function(){
+    	index++;
+  		  if (index > 2) { 
+       		 index = 0  
+  				  }
+    	$(".wrap section").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+    })
+
+         //像左滑动切换图片
+    $('.wrap section').swipeleft(function(){
+    	index--;
+  		  if (index < 0) { 
+       		 index = 2 
+  				  }
+    	$(".wrap section").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+    })
+
+
+    
+  
+
+
+
+
+
+
+})
+
+
+
+
+</script>
+
+
+</body>
+</html>

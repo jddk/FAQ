@@ -1,0 +1,11 @@
+域名解析的CNAME别名记录值 ：dgdrry.16zhp8w6i2ifu98j.wopaiyi.com (仅供解析域名时候使用)
+FTP地址 ：ftp.16zhp8w6i2ifu98j.nipaiyi.com 端口：11 (仅供登录FTP时候使用)
+FTP用户名 ：dgdrry
+FTP密　码 ：17D05B511239b8
+到期时间是 ：2018-7-15 14:59:42
+恭喜！ 您的MySQL数据库已开通了！
+数据库用户名:a0715145943 数据库密码:73697393
+数据库名称:a0715145943
+数据库所在IP:ftp.53nh82onogikhgv8.nipaiyi.com
+端口：11 所用的连接端口:3306
+到期时间是:2018-7-15 14:59:42

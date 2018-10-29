@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="base.js"></script>
+</head>
+<body>
+	<h1>子页面</h1>
+	<button id="btn11">第一个项目</button>
+	<button id="btn22">第二个项目</button>
+
+	<a href="index.html">
+		<button>返回首页</button>
+	</a>
+	<script>
+$(function(){
+		$(location.hash).addClass('bg')
+})
+	</script>
+</body>
+</html>

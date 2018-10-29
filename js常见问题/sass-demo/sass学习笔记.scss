@@ -1,0 +1,152 @@
+// 1.嵌套
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    p {
+        color: red;
+        font-size: 20px;
+        background-color: red;
+    }
+}
+
+// 2.父选择器&
+.box {
+    width: 200px;
+    &:before {
+        background-color: red;
+    }
+}
+
+.box {
+    width: 200px;
+    &-item {
+        background-color: pink;
+        &-cell {
+            color: green;
+        }
+    }
+}
+
+//3。属性嵌套
+.funky {
+    font: {
+        family: fantasy;
+        size: 30em;
+        weight: bold;
+    }
+}
+
+.funky {
+    font: 20px/24px {
+        family: fantasy;
+        weight: bold;
+    }
+}
+
+//4.占位符选择器 通过@extend 指令调用
+// 5.注释 /* */ 与 // （不会写入css）
+
+// 6.SassScript 变量、算数运算
+// 6.1interactive shell
+// 6.2变量： 以$符号开头，$后第一个字符不能为数字.
+// 局部变量：嵌套规则内地变量
+// 全局变量：1.局部变量后加 !global 2.嵌套外变量
+$width5:5em;
+#main {
+    width: $width5;
+}
+.box{
+	$red:red;
+	color:$red;
+}
+// 6.3数据类型
+// 变量定义
+.dingyi{
+	$color:red;
+	$color:blue;
+	color:$color;
+}
+
+//7.@-Rules与指令
+// 7.1 @import
+@import "index.scss";
+@import "user.scss";
+// 7.2 @media 媒体查询
+.sidebar{
+	width: 300px;
+	@media screen and(orientation:landscape) {
+		width: 500px;	
+	}
+}
+
+.box{
+	@media (min-width: 576px) { 
+		width: 200px;
+	 }
+}
+
+// 7.3 @extend 继承
+.error{
+	border:1px #f00;
+	background-color: #fdd;
+}
+.seriousError{
+	@extend .error;
+	border-width: 3px;
+}
+// 7.31多重延伸
+.error{
+	border:1px #f00;
+	background-color: #fdd;
+}
+.attention{
+	font-size:3em;
+	background-color: #ff0;
+}
+.seriousError{
+	@extend .error;
+	@extend .attention;
+	border-width:3px;
+}
+.box{
+	@extend .seriousError;
+	background-color: pink;
+}
+// 7.3.2 @extend-Only选择器
+#context a%extreme{
+	color:blue;
+	font-weight:bold;
+	font-size:2em;
+}
+
+// 9.混合指令   mixin
+@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+//9.1 引用混合指令
+.page-title{
+	@include large-text;
+	padding:3px;
+}
+
+.box{
+	width: 300px;
+	height: 500px;
+	background-color:pink;
+	&__item1{
+		width: 100px;
+		height: 500px;
+		background-color: red;
+	};
+	&__item2{
+		width: 100px;
+		height: 500px;
+		background-color: green;
+	}
+}

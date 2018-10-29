@@ -1,0 +1,78 @@
+
+//sass功能
+// 1.嵌套写法
+.box{
+	color:red;
+	.box-item{
+		background-color: red;
+	}
+}
+
+//输出结果如下
+// .box {
+//   color: red;
+// }
+
+// .box--item {
+//   background-color: red;
+// }
+
+// 2.定义变量
+$red:red;
+footer{
+	color:$red;
+}
+// 输出结果如下
+// footer {
+//   color: red;
+// }
+
+//3.文件级的复用，模块系统
+// @import "common"  将common.css的文件引入此css文件中
+
+
+// 4.展示层的复用
+@mixin cc{
+	width: 200px;
+	height: 300px;
+}
+.aa{
+	@include cc;
+	color:red;
+}
+.bb{
+	@include cc;
+	color:blue;
+}
+//编译后
+// .aa {
+//   width: 200px;
+//   height: 300px;
+//   color: red;
+// }
+
+// .bb {
+//   width: 200px;
+//   height: 300px;
+//   color: blue;
+// }
+
+
+// 父级前缀的沿用@at-root #{&}
+
+.box{
+	color: red;
+		@at-root #{&}--item{
+			background-color: red;
+		}
+		
+}
+
+// 编译后
+// .box {
+//   color: red;
+// }
+
+// .box--item {
+//   background-color: red;
+// }

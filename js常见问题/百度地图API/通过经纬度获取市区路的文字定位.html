@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度地图坐标系转换-demo</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e4TOrsUdUfMPG7Or4Dde9UVS4pyj29jB"></script>
+    <style>
+    #allmap {
+        width: 500px;
+        height: 500px;
+        background: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <p>3</p>
+    <script type="text/javascript">
+    $(function() {
+    	//经度longitude
+    	//纬度latitude
+
+    	//gps坐标   115.778676,33.844582
+    	//百度坐标  115.79065985735,33.84938307787
+
+ 	var x = 115.792111;
+    var y = 33.877972;
+	var point = new BMap.Point(x,y);
+	var geoc = new BMap.Geocoder(); 
+    geoc.getLocation(point, function(rs){
+                var addComp = rs.addressComponents;
+                $('p').html(addComp.city+addComp.district+addComp.street+addComp.streetNumber);
+            });   
+     });  
+    
+    </script>
+</body>
+
+</html>

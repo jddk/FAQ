@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rem</title>
+</head>
+<style>
+	/*移动端适配 width|height|font-size = 视觉稿量出来的值 / 100rem;@lbl*/
+	/*视觉稿宽度 = font-size x rem */
+@media screen and (max-width:359px) and (min-width:320px) {
+    html,body{
+        font-size: 50px !important;
+    }
+}
+@media screen and (max-width:374px) and (min-width:360px) {
+    html,body{
+        font-size: 56.25px !important;
+    }
+}
+@media screen and (max-width:413px) and (min-width:375px) {
+   html,body{
+        font-size: 58.5px !important;
+    }
+}
+@media screen and (max-width:639px)  and (min-width:414px){
+   html,body{
+        font-size: 64.6px !important;
+    }
+}@media screen and (min-width:640px) {
+   html,body{
+        font-size: 100px !important;
+    }
+}
+p{
+	font-size: 1rem;
+}
+
+</style>
+<body>
+	
+<p>字体大小</p>
+
+
+
+</body>
+</html>

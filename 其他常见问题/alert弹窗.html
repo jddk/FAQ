@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>aler弹窗</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js "></script>
+    <script>
+    //字体适配
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth; //获得页面的宽度(就是手机的宽)
+            //if(windowWidth > 640) windowWidth = 640;
+            html.style.fontSize = windowWidth / 750 * 100 + 'px';
+        }, false); //px -》rem 除以 100
+    })();
+    </script>
+    <style>
+    /*	.alert-wrap{
+		width: 100%;
+		height: 100%;
+		background: rgba(24,24,24,0.5);
+		position: fixed;
+		z-index: 20;
+		top: 0;
+		left: 0;
+	}*/
+
+    .alert {
+        width: 5rem;
+        height: 3rem;
+        /*border:0.026667rem solid #595959 ;*/
+        border-radius: 0.2rem;
+        font-size: .4rem;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 33;
+        background: rgba(24, 24, 24, .1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+</head>
+
+<body>
+    
+    <script>
+    $(function() {
+        $.alert("自定义的消息内容");
+        $.alert("自定义的消息内容", "自定义的标题");
+        $.alert("自定义的消息内容", function() {
+            //点击确认后的回调函数
+        });
+        $.alert("自定义的消息内容", "标题", function() {
+            //点击确认后的回调函数
+        });
+
+        //如果参数过多，通过 object 方式传入
+        $.alert({
+            title: '标题',
+            text: '内容文案',
+            onOK: function() {
+                //点击确认
+            }
+        });
+
+
+    })
+    </script>
+</body>
+
+</html>

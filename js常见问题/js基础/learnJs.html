@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+	<div id="box">
+        <div>1</div>   
+        <div>2</div>   
+        <div>3</div>   
+    </div>
+<body>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="learnJs.js"></script>
+    <script>
+    	var doc = document.getElementById('box');
+        var arrayOfNodes = Array.prototype.slice.call(doc.childNodes,0);
+        console.log(arrayOfNodes)
+
+    </script>
+</body>
+
+</html>

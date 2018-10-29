@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sass-demo</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        width: 50px;
+        height: 100px;
+        background: pink;
+    }
+
+    .top {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bottom {
+        width: 50px;
+        height: 50px;
+    }
+
+    .oo {
+        width: 40px;
+        height: 8000px;
+        background: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button class="top">回到顶部</button>
+        <button class="bottom">回到底部</button>
+    </div>
+    <div class="oo">
+    </div>
+</body>
+<script>
+$(function() {
+    $('.top').click(function() {
+        $('body').scrollTop(0);
+    })
+
+    $('.bottom').click(function() {
+        var height = $('body').height();
+        $('body').scrollTop(height);
+            
+    })
+})
+</script>
+
+</html>
