@@ -1,0 +1,147 @@
+
+/* 移动端适配 */
+html{
+  font-size: 13.3333333333333vw;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  color: #000;
+  height: 100%;
+  font-size:.3rem;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  background-color: #fff;
+}
+textarea{
+  resize: none;      /*去掉拖动*/
+    outline: none;     /*去掉外围的发光*/
+    overflow-y:hidden; /*去掉右边的下拉条*/
+  overflow-x:hidden;  /*去掉x轴滚动条*/
+  border:none;
+}
+::-webkit-input-placeholder{
+  color: #959595;
+} 
+
+
+
+/* .jddk {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  font-size:.24rem;
+  overflow: hidden;
+  padding-bottom:1.4rem;
+} */
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* flex */
+
+.flex {
+  display: flex;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+.flex-align-end {
+  align-items: flex-end;
+}
+.flex-justify-around {
+  justify-content: space-around;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.flex-end {
+  align-self: flex-end;
+}
+
+/* loading */
+.loading{
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(0,0,0,0.7); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}
+.loading-box{
+  width:110px;
+  height: 110px;
+  border-radius: 4.5px;
+  background:rgba(0,0,0,0.6); 
+}
+.loading img{
+  width: 35px;
+  height: 35px;
+}
+.loading-text{
+  font-size: 13px;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+/* 测试用颜色 */
+.pink {
+  background-color: pink;
+}
+.red {
+  background-color: red;
+}
+
+
+[v-cloak]{
+  display:none;
+}
