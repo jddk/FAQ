@@ -1,0 +1,21 @@
+git clone XXX后进入项目文件夹：
+1、git init 初始化你的项目
+2、git config --global user.name "ChenZhiHeng1109"   谁修改的（每个人填自己的）
+3、git config --global user.emali "1712560167@qq.com"   码云账号(每个人自己的email)
+
+4、git add . 不要忘记".";添加到仓库
+5、git commit -m '内容'  解释提交代码
+6、git push origin master 提交到码云;(可能又让输入账号和密码)
+7、码云邀请开发成员：https://blog.csdn.net/gaojie_csdn/article/details/81081467
+8、从码云更新代码：https://blog.csdn.net/SueJun/article/details/74502622
+9、git图形工具下载：https://tortoisegit.org/download/
+10、git安装TortoiseGit.msi 报错2203错误:https://blog.csdn.net/absinjun/article/details/79323284
+11、git保存用户名和密码：https://blog.csdn.net/bluefish_ygz/article/details/50330705
+	在git项目目录下，右键–>TortoiseGit–>Settings（可能会弹出警告框，点OK就行）
+	选择Git–>Edit local .git/config
+	编辑.git/config，添加如下内容
+	[credential]
+		helper = store
+	git config --local credential.helper store
+		
+全局配置：git config --global credential.helper store
