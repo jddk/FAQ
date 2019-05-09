@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<!-- <input type="text"> -->
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	
+	var str = '01234567';
+	// 1.search  返回索引
+	//console.log(str.search('u'));  //-1    //不存在的都会是-1
+	//console.log(str.search('0'));  //0
+
+	//2.substring 从第几个到第几个，不包括结束位置
+	// console.log(str.substring(3,4))  //1992  从1开始数
+	// console.log(str.substr(3,4)) //1992  substr表示从第几位开始，往后数几位
+
+	// 3.charAt 获取第几位的的字符串从0开始
+	// console.log(str.charAt(2));  //c
+
+	// 4.split()  分割字符串获得数组
+	// var sp = '12-56-aaa-89';
+	// console.log(sp.split('-'))   //['12','56','aaa','89']
+
+// 找出字母b
+	// var str = 'aB4343';
+ 	//var re = new RegExp('b','i');  //js风格
+ 	// var re = /b4/i			//perl风格		i忽略大小写
+ 	// console.log(str.search(re))
+
+// 把所有的数字提取出来
+ 	// var str = 'aa33bb2';
+ 	// var re = /\d/g; 			//	\d 表示数字 
+ 								// + 表示若干
+ 								//  g表示找到所有，全局匹配
+
+ 	// console.log(str.match(re))	//match把所有匹配的东西全部提取出来
+
+
+// 把全局的a替换成0
+ 	var str = 'abc aaa erw';
+ 	var re = /aa/g;
+ 	console.log(str.replace(re,'0'));
+
+ // 敏感词过滤
+ // var aa = '北京爱情故事啊啊啊啊大淘宝';
+ // var re = /北京|百度|淘宝/g;
+ // console.log(aa.replace(re,'***'));
+ //输出   ***爱情故事啊啊啊啊大***
+
+// 正则元字符  []   [abc]里面的随便取哪一个都可以
+// var str = 'apc xpc ppc bpc spc tpc';
+// var re = /[apx]pc/g;
+// console.log(str.match(re));
+// 输出 ['apc','xpc','ppc'];
+
+// [a-z]	a到z
+// [0-9]	0到9
+// [^a-z]   除了a-z
+
+
+// 过滤HTML标签    . 表示任意字符
+// var xx = '<p>hello world</p>';
+// var re = /<[^<>]+>/g;	//<>中间不能出现<>
+// var yy = xx.replace(re,'');
+// console.log(yy)
+
+// \d 	数字  			 [0-9]
+// \w  英文、数字、下划线  [a-z0-9]
+// \s  空白字符
+
+// \D  除了0-9		[^0-9]
+// \W
+// \S
+
+
+// 量词：个数
+// {n}  正好出现n次
+// {n,m}	最少n次，最多m次
+// {n,}		最少n次，最多不限
+// +号等价于	{1,}
+// \d{8}
+// \[1-9]\d{7}\		第一位是1-9后面七位是[0-9]的数字
+
+// qq号
+//	/[1-9]\d{4,10}/		第一位是1-9，最少4位，最多十位
+
+
+// 电话号码验证
+// test()方法用于检测一个字符串是否匹配某个模式
+// $('input').blur(function(){
+// 		var val = $('input').val();
+// 		var re = /1\d{10}/;
+// 		if(re.test(val)){
+// 			console.log('手机号正确')
+// 		}else{
+// 			console.log('请输入11位正确手机号')
+// 		}
+// 	})
+// var pattern = /^((1[358][0-9])|(14[57])|(17[0678])|(19[7]))\d{8}$/;
+
+// 邮箱验证			^表开始		$表结束
+// $('input').blur(function(){
+// 		var val = $('input').val();
+// 		var re = /^([a-z0-9])+@([a-z0-9])+\.([a-z0-9])+$/i;
+// 		if(re.test(val)){
+// 			console.log('正确')
+// 		}else{
+// 			console.log('错误')
+// 		}
+// 	})
+
+// 去除所有空格
+// $('input').blur(function(){
+// 		var val = $('input').val();
+// 		var re = /\s/g;
+// 		var xx = val.replace(re,'');
+// 		console.log('没有去空格的',val);
+// 		console.log('去空格后的',xx)
+// 	})
+
+// test()  //只要字符串一部分符合要求就返回true
+</script>
+</body>
+</html>
